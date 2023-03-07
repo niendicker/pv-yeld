@@ -1,0 +1,48 @@
+
+
+#include <main.h>
+#include <fstream>
+
+#include "pvIrradianceModel.h"
+#include "tSurfaceIrradiance.h"
+
+using Eigen::MatrixXd;
+
+int main(int argc, char** argv){
+  //MatrixXd mx(2,2);
+  //mx(0,0) = 10;
+  //std::cout << mx << std::endl;
+
+  //double gGlobalHorizontal, gDirect, gDiffuseHorizontal, sunElevation, sunAzimuth, surfaceTilt, surfaceAzimuth;
+  
+  double gGlobalHorizontal = 438;
+  double gDirect = 821;
+  double gDiffuseHorizontal = 88;
+  double sunElevation = 25.31;
+  double sunAzimuth = -25.43;
+  double surfaceTilt = 33;
+  double surfaceAzimuth = 0;
+  double albedoCoeff = 0.4;
+
+  double g, gd, gdf, ggr;
+  ofstream outFile;
+  outFile.open("simuOutput.csv");
+  outFile << "tilt; Gdt; Gdft; Grft; Gt" << std::endl;
+  
+  for(int i=10; i<45; i++){
+    surfaceTilt = i;
+    gd = gdt((90-sunElevation), sunAzimuth, surfaceTilt, surfaceAzimuth, gDirect);
+    gdf = gdftIso(surfaceTilt, gDiffuseHorizontal);  //diffuseIrradiance();
+    ggr =  ggrt(surfaceTilt, albedoCoeff, gGlobalHorizontal); //reflectedIrradiance();
+    g = tiltedIsotropicG(gd, gdf, ggr);
+    outFile << surfaceTilt << ";" << gd << ";" << gdf << ";" << ggr << ";" << g << std::endl;
+    //std::cout << "----- Tilt Angle: " << surfaceTilt << std::endl;
+    //std::cout << "Direct Irradiance on tilted surface:" << gd << " wh/m2" << std::endl;
+    //std::cout << "Diffuse Irradiance on tilted surface:" << gdf << " wh/m2" << std::endl;
+    //std::cout << "Reflected Irradiance on tilted surface:" << ggr << " wh/m2" << std::endl; 
+    //std::cout << "Total Irradiance on Tilted Surface: " << g << " wh/m2" << std::endl;
+  
+  }
+  
+  return 0;
+}

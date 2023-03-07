@@ -1,0 +1,55 @@
+#HOURLY VALUES OF SOLAR RADIATION AND METEOROLOGICAL PARAMETERS
+#
+#Report number: SG-01-2016
+#Customer name: Solargis s.r.o.
+#Issued: 2017-08-03 10:24
+#
+#Site name: Plataforma Solar de Almeria, Spain (ES)
+#Latitude: 37.094416
+#Longitude: -2.359850
+#Elevation: 497.0 m a.s.l.
+#http://solargis.info/imaps/#tl=Google:satellite&loc=37.094416,-2.359850&z=14 
+#
+#
+#Output from the climate database Solargis v2.1.12
+#
+#Solar radiation data
+#Description: data calculated from Meteosat MSG and MFG satellite data ((c) 2017 EUMETSAT) and from atmospheric data ((c) 2017 ECMWF and NOAA) by Solargis method 
+#Summarization type: hourly
+#Summarization period: 01/01/1994 - 31/12/2016
+#Spatial resolution: 250 m
+#
+#Meteorological data
+#Description: spatially disaggregated from CFSR, CFSv2 and GFS ((c) 2017 NOAA) by Solargis method 
+#Summarization type: hourly
+#Summarization period: 01/01/1994 - 31/12/2016
+#Spatial resolution: temperature 1 km, other meteorological parameters 33 km to 55 km
+#
+#Service provider: Solargis s.r.o., M. Marecka 3, Bratislava, Slovakia
+#Company ID: 45 354 766, VAT Number: SK2022962766
+#Registration: Business register, District Court Bratislava I, Section Sro, File 62765/B
+#http://solargis.com, contact@solargis.com
+#
+#Disclaimer:
+#Considering the nature of climate fluctuations, interannual and long-term changes, as well as the uncertainty of measurements and calculations, Solargis s.r.o. cannot take full guarantee of the accuracy of estimates. The maximum possible has been done for the assessment of climate conditions based on the best available data, software and knowledge. Solargis s.r.o. shall not be liable for any direct, incidental, consequential, indirect or punitive damages arising or alleged to have arisen out of use of the provided data. Solargis is a trade mark of Solargis s.r.o.
+#
+#Copyright (c) 2017 Solargis s.r.o.
+#
+#
+#Columns:
+#Date - Date of measurement, format DD.MM.YYYY
+#Time - Time of measurement, time reference UTC+0, time step 60 min, time format HH:MM, center of the averaging interval
+#GHI - Global horizontal irradiation [Wh/m2], no data value -9
+#DNI - Direct normal irradiation [Wh/m2], no data value -9
+#DIF - Diffuse horizontal irradiation [Wh/m2], no data value -9
+#GTI - Global tilted irradiation [Wh/m2] (fixed inclination: 33 deg. azimuth: 180 deg.), no data value -9
+#flagR - Cloud identification quality flag: 0: sun below horizon, 1: model value, 2: interpolated <=1hour, 3: extrapolated <=1hour, 4: interpolated/extrapolated >1hour,  5: long term monthly median or persistence,  6: synthetic data, 11:NWP forecast
+#SE - Sun altitude (elevation) angle [deg.]
+#SA - Sun azimuth angle [deg.]
+#TEMP - Air temperature at 2 m [deg. C]
+#AP - Atmospheric pressure [hPa]
+#RH - Relative humidity [%]
+#WS - Wind speed at 10 m [m/s]
+#WD - Wind direction [deg.]
+#PWAT - Precipitable water [kg/m2], no data value -99
+#
